@@ -1,1 +1,24 @@
-first
+import os
+
+class Config:
+
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://ian:sawasawa@localhost/blog'
+
+    @staticmethod
+    def init_app(app):
+        pass
+
+class ProdConfig(Config):
+    pass
+
+class TestConfig(Config):
+    pass
+
+class DevConfig(Config):
+    DEBUG = True
+
+config_options ={"production":ProdConfig,
+"default":DevConfig,"testing":TestConfig
+
+}
+
