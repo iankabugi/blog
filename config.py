@@ -1,7 +1,12 @@
 import os
 
 class Config:
-    email configurations
+
+    API_BASE_URL = 'http://quotes.stormconsultancy.co.uk/random.json'
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+
+
+    #email configurations
     MAIL_SERVER = 'iank299@gmail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
@@ -16,16 +21,30 @@ class Config:
         pass
 
 class ProdConfig(Config):
+    '''
+    Production  configuration child class
+
+    Args:
+        Config: The parent configuration class with General configuration settings
+    '''
     pass
 
 class TestConfig(Config):
-    pass
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://ian:sawasawa@localhost/blog'
 
 class DevConfig(Config):
+    '''
+    Development  configuration child class
+
+    Args:
+        Config: The parent configuration class with General configuration settings
+    '''
+    
     DEBUG = True
 
 config_options ={"production":ProdConfig,
-"development":DevConfig,"testing":TestConfig
+    "development":DevConfig,
+    "testing":TestConfig
 
 }
 

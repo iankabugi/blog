@@ -1,0 +1,4 @@
+Hello {{subscriber.username}}
+Welcome to Blog
+We have just seen you have signed up for our application and want to welcome you to the family.
+Feel free to express yourself and write!
