@@ -5,13 +5,9 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
-    <title>Plog</title>
-    <style>
-        .div.w3-row {
-            text-align: center,
-        }
-    </style>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <title>Blog</title>
+   
 
 </head>
 
@@ -35,7 +31,6 @@
                 class="w3-bar-item w3-button w3-hide-small w3-hover-white">PROFILE</a>
             {%endif%}
             <div class="w3-dropdown-hover w3-hide-small">
-                <button class="w3-button" title="Notifications">POSTS <i class="fa fa-caret-down"></i></button>
                 <div class="w3-dropdown-content w3-card-4 w3-bar-block">
                     <a class="w3-bar-item " href="{{url_for('main.post',category='life')}}" class="button fit">Life</a>
 
@@ -43,3 +38,5 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
